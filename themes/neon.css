@@ -1,0 +1,15 @@
+:root {
+  --bg: #0a0f1f;
+  --panel: #11172a;
+  --card-bg: #1a2338;
+  --neon1: #41b8ff;
+  --neon2: #9d4bff;
+  --neon-glow: 0 0 12px rgba(100,180,255,0.8);
+}
+
+body {
+  background: radial-gradient(circle at 50% 20%, #0a1228, #000);
+}
+.card {
+  box-shadow: var(--neon-glow);
+}

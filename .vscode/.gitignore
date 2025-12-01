@@ -1,0 +1,10 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code settings
+.vscode/
+
+# Node stuff (future-proof)
+node_modules/
+dist/

@@ -1,0 +1,21 @@
+:root {
+  --bg: #1b1b1b;
+  --panel: #222;
+  --card-bg: #2d2d2d;
+  --accent: #f0e000;
+}
+
+body {
+  image-rendering: pixelated;
+  background: repeating-linear-gradient(
+    45deg,
+    #1b1b1b,
+    #1b1b1b 10px,
+    #181818 10px,
+    #181818 20px
+  );
+}
+.card {
+  border-radius: 0;
+  border: 3px solid #f0e000;
+}

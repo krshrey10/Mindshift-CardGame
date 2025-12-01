@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mindshift – Card Rule Game</title>
+  <link rel="stylesheet" href="style.css" />
+  <link id="theme-link" rel="stylesheet" href="themes/neon.css">
+</head>
+<body data-theme="neon">
+  <!-- START SCREEN -->
+  <div id="start-screen" class="start-screen">
+    <div class="start-card">
+      <h1 class="start-title">Mindshift</h1>
+      <p class="start-subtitle">
+        A tactical card game where every card gives the next player a new task.
+      </p>
+
+      <div class="start-row">
+        <div class="start-field">
+          <label for="start-difficulty">Difficulty</label>
+          <select id="start-difficulty">
+            <option value="easy">Lite – relaxed</option>
+            <option value="medium" selected>Tactical – think a bit</option>
+            <option value="hard">Tactical+ – sweat a little</option>
+          </select>
+        </div>
+
+        <div class="start-field">
+          <label for="start-theme">Theme</label>
+          <select id="start-theme">
+            <option value="neon">Neon</option>
+            <option value="pastel">Pastel</option>
+            <option value="forest">Forest</option>
+            <option value="cyberpunk">Cyberpunk</option>
+            <option value="paper">Paper</option>
+            <option value="glass">Glass</option>
+            <option value="pixel">Pixel</option>
+        </select>
+    </div>
+</div>
+
+      <div class="start-row">
+        <div class="start-field">
+          <label for="start-seed">Seed (optional)</label>
+          <input
+            id="start-seed"
+            type="text"
+            placeholder="random if empty"
+            maxlength="16"
+          />
+        </div>
+      </div>
+
+      <div class="start-row toggles">
+        <label class="toggle">
+          <input type="checkbox" id="start-sfx" checked />
+          <span></span>
+          <span class="toggle-label">Sound effects</span>
+        </label>
+        <label class="toggle">
+          <input type="checkbox" id="start-music" checked />
+          <span></span>
+          <span class="toggle-label">Music</span>
+        </label>
+      </div>
+
+      <div class="start-buttons">
+        <button id="start-play-btn" class="primary-btn big">
+          Start Game
+        </button>
+        <button id="start-howto-btn" class="ghost-btn">
+          How to Play
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN GAME UI -->
+  <div class="app-shell hidden" id="game-shell">
+    <header class="header">
+      <div class="header-top">
+        <div class="title-row">
+          <h1>Mindshift</h1>
+          <span class="title-emoji">🧠🃏</span>
+        </div>
+        <div class="header-actions">
+          <button id="howto-btn" class="ghost-btn small">How to Play</button>
+          <button id="stats-btn" class="ghost-btn small">Stats 📊</button>
+          <button id="settings-btn" class="ghost-btn small">Settings ⚙</button>
+          <button id="undo-btn" class="btn small hidden">Undo</button>
+          <button id="achievements-btn" class="btn">Achievements ⭐</button>
+
+        </div>
+      </div>
+      <p class="subtitle">
+        A tactical card game where every card gives the next player a new task.
+      </p>
+    </header>
+
+    <div class="top-bar">
+      <div class="pill">
+        Current Task:
+        <span id="current-rule">Any</span>
+      </div>
+      <div class="pill">
+        Deck left:
+        <span id="deck-count">0</span>
+      </div>
+    </div>
+
+    <main class="board">
+      <section class="player-area bot-area">
+        <h2>Computer</h2>
+        <p class="hand-count">
+          Cards in hand: <span id="bot-hand-count">0</span>
+        </p>
+        <p class="hint-text">The bot follows the same task rules.</p>
+      </section>
+
+      <section class="center-area">
+        <h3>Center Card</h3>
+        <div id="center-card" class="card placeholder">No card</div>
+        <p id="message" class="message">
+          Your turn. Play any card to set the first task.
+        </p>
+      </section>
+
+      <section class="player-area you-area">
+        <h2>You</h2>
+        <div id="player-hand" class="hand"></div>
+        <button id="draw-btn" class="primary-btn">Draw Card</button>
+        <p class="hint-text">
+          Play a glowing card. If nothing glows, press Draw.
+          (Shortcut: 1–9 to play, D to draw)
+        </p>
+      </section>
+    </main>
+
+    <div class="bottom-bar">
+      <button id="restart-btn" class="danger-btn">Restart Game</button>
+    </div>
+  </div>
+
+  <!-- HOW TO PLAY MODAL -->
+  <div id="howto-modal" class="modal hidden">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content">
+      <h2>How to Play</h2>
+      <p>
+        Mindshift is a 1v1 card game. You and the computer take turns playing
+        cards onto the center pile.
+      </p>
+      <ul>
+        <li>
+          Each card has a <strong>number</strong> and a <strong>task icon</strong>.
+        </li>
+        <li>
+          The icon sets the <strong>task for the next turn</strong>.
+        </li>
+      </ul>
+      <p><strong>Task icons:</strong></p>
+      <ul>
+        <li>★ Any – next player can play any card.</li>
+        <li>🎨 Match colour – must match the center card’s colour.</li>
+        <li># Match number – must match the center card’s number.</li>
+        <li>↑ Higher – must play a card with a higher number.</li>
+      </ul>
+      <p>
+        If you have no playable card, draw one. If you still can’t play, you
+        pass automatically. First to empty their hand wins.
+      </p>
+
+      <div class="howto-actions">
+        <button id="tutorial-open-btn" class="primary-btn small">
+          Play 3-turn tutorial ▶
+        </button>
+        <button id="howto-close-btn" class="ghost-btn small">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3-TURN TUTORIAL MODAL -->
+  <div id="tutorial-modal" class="modal hidden">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content tutorial-modal-content">
+      <h2>Guided 3-Turn Example</h2>
+      <p id="tutorial-caption" class="tutorial-caption">
+        We’ll walk through three turns to show how tasks work.
+      </p>
+
+      <div id="tutorial-board" class="tutorial-board">
+        <!-- Filled by JS -->
+      </div>
+
+      <div id="tutorial-dots" class="tutorial-dots">
+        <!-- ● ○ ○ etc, filled by JS -->
+      </div>
+
+      <div class="tutorial-actions">
+        <button id="tutorial-skip-btn" class="ghost-btn small">Skip</button>
+        <div class="tutorial-nav">
+          <button id="tutorial-prev-btn" class="ghost-btn small">Back</button>
+          <button id="tutorial-next-btn" class="primary-btn small">Next</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SETTINGS MODAL -->
+  <div id="settings-modal" class="modal hidden">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content">
+      <h2>Settings</h2>
+
+      <div class="settings-row">
+        <label for="settings-difficulty">Difficulty</label>
+        <select id="settings-difficulty">
+          <option value="easy">Lite – relaxed</option>
+          <option value="medium">Tactical – think a bit</option>
+          <option value="hard">Tactical+ – sweat a little</option>
+        </select>
+      </div>
+
+      <div class="settings-row">
+        <label for="settings-theme">Theme</label>
+        <select id="settings-theme">
+          <option value="neon">Neon</option>
+          <option value="pastel">Pastel</option>
+          <option value="forest">Forest</option>
+        </select>
+      </div>
+
+      <div class="settings-row settings-toggles">
+        <label class="toggle">
+          <input type="checkbox" id="settings-sfx" />
+          <span></span>
+          <span class="toggle-label">Sound effects</span>
+        </label>
+        <label class="toggle">
+          <input type="checkbox" id="settings-music" />
+          <span></span>
+          <span class="toggle-label">Music</span>
+        </label>
+      </div>
+
+      <div class="settings-actions">
+        <button id="settings-close-btn" class="ghost-btn small">Cancel</button>
+        <button id="settings-save-btn" class="primary-btn small">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- STATS MODAL -->
+  <div id="stats-modal" class="modal hidden">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content">
+      <h2>Your Stats</h2>
+
+      <p><strong>Total games:</strong> <span id="stats-total">0</span></p>
+      <p>
+        <strong>Your wins:</strong> <span id="stats-player-wins">0</span> ·
+        <strong>Computer wins:</strong> <span id="stats-bot-wins">0</span>
+      </p>
+
+      <p><strong>By difficulty:</strong></p>
+      <ul>
+        <li>Lite – <span id="stats-easy">0</span> games</li>
+        <li>Tactical – <span id="stats-medium">0</span> games</li>
+        <li>Tactical+ – <span id="stats-hard">0</span> games</li>
+      </ul>
+
+      <h3 style="margin-top: 10px; font-size: 0.95rem;">Recent games</h3>
+      <div
+        id="stats-history"
+        style="max-height: 160px; overflow-y: auto; font-size: 0.8rem;"
+      >
+        <p>No games played yet.</p>
+      </div>
+
+      <div class="settings-actions">
+        <button id="stats-reset-btn" class="danger-btn small">Reset Stats</button>
+        <button id="stats-close-btn" class="ghost-btn small">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Background music -->
+  <audio id="bg-music" loop>
+    <source src="sounds/ambient.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script type="module" src="script.js"></script>
+
+  <!-- Achievements Modal -->
+   <div id="achievements-modal" class="modal hidden">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content">
+        <h2>Achievements</h2>
+        <div id="achievements-list"></div>
+        <div class="settings-actions">
+            <button id="achievements-close" class="ghost-btn small">Close</button>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

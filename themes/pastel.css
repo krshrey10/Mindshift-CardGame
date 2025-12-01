@@ -1,0 +1,14 @@
+:root {
+  --bg: #f9f7fb;
+  --panel: #ffffff;
+  --card-bg: #f5f1ff;
+  --accent: #d4b5ff;
+}
+
+body {
+  background: #f7f4fa;
+}
+.card {
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}

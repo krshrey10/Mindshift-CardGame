@@ -1,0 +1,13 @@
+:root {
+  --bg: #0f1d14;
+  --panel: #14281b;
+  --card-bg: #1b3b24;
+  --accent: #4caf50;
+}
+
+body {
+  background: linear-gradient(#0f1d14, #0b150d);
+}
+.card {
+  border: 2px solid #2e6b3f;
+}
