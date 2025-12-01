@@ -14,7 +14,7 @@ The bot adapts to your gameplay, avoids unfair behaviors, and uses unique AI “
 🔗 https://krshrey10.github.io/Mindshift-CardGame/
 
 🚀 Features
-<p align="center"> <img src="https://i.imgur.com/ewGfOXE.png" width="750"> </p>
+
 🎮 Core Gameplay
 https://raw.githubusercontent.com/krshrey10/Mindshift-CardGame/main/preview.gif
 
