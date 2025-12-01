@@ -1,41 +1,76 @@
 # 🎴 Mindshift – Tactical Rule-Shifting Card Game
-
 <p align="center"> <img src="https://img.shields.io/github/stars/krshrey10/Mindshift-CardGame?style=for-the-badge" /> <img src="https://img.shields.io/github/forks/krshrey10/Mindshift-CardGame?style=for-the-badge" /> <img src="https://img.shields.io/badge/Built%20With-JavaScript%20|%20HTML%20|%20CSS-blueviolet?style=for-the-badge" /> <img src="https://img.shields.io/badge/AI-Bot%20Personality%20Engine-purple?style=for-the-badge" /> </p>
 
-Mindshift is a fast, strategic 1v1 card game built with vanilla JavaScript, where every card you play sets a new rule that your opponent must follow.
+Mindshift is a fast, strategic 1v1 card game built with vanilla JavaScript, where every card you play sets a new rule your opponent must follow.
 
-The bot adapts to your gameplay, avoids unfair behaviors, and uses unique AI “personalities” (Bolt, Mimic, Athena) depending on difficulty.
-
-# 🎯 Goal: Empty your hand before your opponent — while surviving their tactical traps.
+The bot adapts to your gameplay, avoids unfair behaviors, and uses personality-driven AI modes: Bolt, Mimic, Athena.
 
 # 🌐 Live Demo
 <p align="center"> <a href="https://krshrey10.github.io/Mindshift-CardGame/"> <img src="https://img.shields.io/badge/▶️%20Play%20Now-Mindshift%20Card%20Game-brightgreen?style=for-the-badge&logo=google-play" /> </a> </p>
-<p align="center">
-  <img src="https://raw.githubusercontent.com/krshrey10/Mindshift-CardGame/main/MindShift.gif" width="650" />
-</p>
 
-# 👉 Play Now:
-🔗 https://krshrey10.github.io/Mindshift-CardGame/
+👉 Play now:
+https://krshrey10.github.io/Mindshift-CardGame/
+
+# 🎥 Gameplay Preview
+https://raw.githubusercontent.com/krshrey10/Mindshift-CardGame/main/preview.gif
 
 # 🚀 Features
 ## 🎮 Core Gameplay
-https://raw.githubusercontent.com/krshrey10/Mindshift-CardGame/main/preview.gif
 
 ## 40-card deck with colours & rule types
 
-## Every card changes the task:
+1.Every card changes the task:
 
-1.Any
+2.Any
 
-2.Match Colour
+3.Match Colour
 
-3.Match Number
+4.Match Number
 
-4.Higher
+5.Higher
 
-5.Win by emptying your hand first
+6.Win by emptying your hand
 
-6.Player-friendly glowing cards showing what you can play.
+7.Player-friendly glowing indicators
+
+8.Smooth animations & SFX
+
+# 🧠 Smart Bot AI (3 Personalities)
+
+## 🟢 Bolt (Easy)
+
+Random, clumsy
+
+Allows Undo
+
+Beginner friendly
+
+## 🟡 Mimic (Medium)
+
+Mirrors the player
+
+Learns from your moves
+
+## 🔴 Athena (Hard)
+
+Tactical scoring engine
+
+Avoids unfair loops
+
+Never abuses Match Number
+
+
+# 🎨 Themes
+
+Choose from multiple UI themes:
+
+🌌 Neon
+🧊 Glass
+💖 Pastel
+🌲 Forest
+📜 Paper
+🕹️ Pixel
+🔮 Cyberpunk
 
 # 🧠 About the Game
 
@@ -44,29 +79,6 @@ Mindshift is a fast, strategic 1v1 tactical card game built with vanilla JavaScr
 The bot uses 3 personality-based AIs, avoids unfair moves, and adapts to the player.
 
 # 🎯 Goal: Empty your hand before your opponent — while surviving their tactics.
-
-# 🤖 Smart Bot AI (3 Personalities)
-## 🟢 Bolt (Easy)
-
-Silly, random
-
-Allows Undo
-
-Great for beginners
-
-## 🟡 Mimic (Medium)
-
-Mirrors the player’s patterns
-
-Learns from your last move
-
-## 🔴 Athena (Hard)
-
-Tactical scoring engine
-
-Avoids traps & unfair loops
-
-Never abuses “Match Number”
 
 # ⚖️ Fairness Guard System
 
@@ -77,25 +89,8 @@ To keep gameplay fair:
 ✔ Undo allowed on Easy
 ✔ Anti-loop logic prevents unwinnable cycles
 
-# 🎨 Themes
 
-Each theme is selectable from settings:
-
-🌌 Neon
-
-🧊 Glass
-
-💖 Pastel
-
-🌲 Forest
-
-📜 Paper
-
-🕹️ Pixel
-
-🔮 Cyberpunk
-
-# 🖼️ Screenshots
+#  🖼️ Screenshots
 
 <img width="977" height="750" alt="image" src="https://github.com/user-attachments/assets/4f99511a-625a-44b0-af4d-be34a3b3846e" />
 <img width="868" height="442" alt="image" src="https://github.com/user-attachments/assets/ff80001d-4492-41ba-b114-c01885656213" />
