@@ -9,6 +9,7 @@ The bot adapts to your gameplay, avoids unfair behaviors, and uses unique AI “
 🎯 Goal: Empty your hand before your opponent — while surviving their tactical traps.
 
 🌐 Live Demo
+"C:\Users\admin\OneDrive\Desktop\MindShift.gif"
 <p align="center"> <a href="https://krshrey10.github.io/Mindshift-CardGame/"> <img src="https://img.shields.io/badge/▶️%20Play%20Now-Mindshift%20Card%20Game-brightgreen?style=for-the-badge&logo=google-play" /> </a> </p>
 👉 Play Now:
 🔗 https://krshrey10.github.io/Mindshift-CardGame/
