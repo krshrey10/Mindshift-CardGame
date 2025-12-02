@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./banner.png" alt="Mindshift – Tactical Rule-Shifting Card Game" />
+  <img src="./Banner.png" alt="Mindshift – Tactical Rule-Shifting Card Game" />
 </p>
 
 # 🎴 Mindshift – Tactical Rule-Shifting Card Game
