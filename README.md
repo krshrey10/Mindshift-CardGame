@@ -66,7 +66,7 @@ Avoids unfair loops
 Never abuses Match Number
 
 
-# Themes <img src="https://raw.githubusercontent.com/krshrey10/Mindshift-CardGame/main/assets/icons/theme.gif" width="60">
+# 🎨Themes <img src="https://raw.githubusercontent.com/krshrey10/Mindshift-CardGame/main/assets/icons/theme.gif" width="60">
 
 Choose from multiple UI themes:
 
