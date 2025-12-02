@@ -1,7 +1,6 @@
 <p align="center">
-  <img src="./assets/banner.png" alt="Mindshift – Tactical Rule-Shifting Card Game" />
+  <img src="./banner.png" alt="Mindshift – Tactical Rule-Shifting Card Game" />
 </p>
-
 
 # 🎴 Mindshift – Tactical Rule-Shifting Card Game
 <p align="center"> <img src="https://img.shields.io/github/stars/krshrey10/Mindshift-CardGame?style=for-the-badge" /> <img src="https://img.shields.io/github/forks/krshrey10/Mindshift-CardGame?style=for-the-badge" /> <img src="https://img.shields.io/badge/Built%20With-JavaScript%20|%20HTML%20|%20CSS-blueviolet?style=for-the-badge" /> <img src="https://img.shields.io/badge/AI-Bot%20Personality%20Engine-purple?style=for-the-badge" /> </p>
